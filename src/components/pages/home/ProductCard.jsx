@@ -37,6 +37,7 @@ const ProductCard = ({ image, name, price, id, description, category }) => {
   };
 
   return (
+    
     <div className="w-full px-4 max-w-sm mx-auto group overflow-hidden rounded-lg shadow-lg bg-white transition-transform duration-300 hover:scale-105">
       <div className="relative">
         <img

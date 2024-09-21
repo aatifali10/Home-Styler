@@ -8,6 +8,13 @@
   font-family: "Montserrat", sans-serif;
   scroll-behavior: smooth;
 }
+body {
+  @apply bg-white text-black; /* Default styles */
+}
+
+body.dark {
+  @apply bg-gray-800 text-white; /* Dark mode styles */
+}
 
 .bodyBg {
   background: rgb(251, 251, 251);

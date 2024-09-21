@@ -245,7 +245,7 @@ export const homeproducts2 = [
   },
   {
     id: 11,
-    name: "Beige Working Chair With Armrest",
+    name: "Beige Working Chair With",
     image: WorkingChair,
     price: 784.0,
     description:

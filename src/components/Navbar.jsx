@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import { CgIfDesign } from "react-icons/cg";
 import { BsFillBasketFill, BsHeart } from "react-icons/bs";
 import { IoMenu, IoClose } from "react-icons/io5";
+import { FaSun, FaMoon } from "react-icons/fa"; // Importing icons for light and dark mode
 import { Link } from "react-router-dom";
 import { useTheme } from './ThemeContext';
 
@@ -39,9 +40,7 @@ const Navbar = () => {
       <ul className="hidden lg:flex items-center gap-x-10">
         <li><Link to="/" className={`text-base font-medium ${isDarkMode ? 'text-white' : 'text-black'} hover:text-yellow-500`}>Home</Link></li>
         <li className="relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} ref={dropdownRef}>
-          <button className={`text-base font-medium ${isDarkMode ? 'text-white' : 'text-black'} hover:text-yellow-500`}>
-            Category
-          </button>
+          <button className={`text-base font-medium ${isDarkMode ? 'text-white' : 'text-black'} hover:text-yellow-500`}>Category</button>
           {isDropdownOpen && (
             <ul className="absolute left-0 w-40 bg-white shadow-lg py-1 z-10">
               <li><Link to="/furniture" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Furniture</Link></li>
@@ -63,6 +62,11 @@ const Navbar = () => {
           </Link>
         </li>
       </ul>
+
+      {/* Theme Toggle Icons */}
+      <button onClick={toggleTheme} className={`mt-4 p-2 rounded ${isDarkMode ? 'bg-gray-600 text-white' : 'bg-gray-300 text-black'}`}>
+        {isDarkMode ? <FaSun className="text-xl" /> : <FaMoon className="text-xl" />}
+      </button>
 
       {/* Mobile Menu Button */}
       <button className="lg:hidden flex items-center" onClick={() => setOpenNav(!openNav)}>
@@ -93,8 +97,9 @@ const Navbar = () => {
             <li><Link to="/contact-us" className={`text-base font-medium ${isDarkMode ? 'text-white' : 'text-black'} hover:text-yellow-500`}>Contact Us</Link></li>
             <li><Link to="/feedback" className={`text-base font-medium ${isDarkMode ? 'text-white' : 'text-black'} hover:text-yellow-500`}>Feedback</Link></li>
           </ul>
+          {/* Theme Toggle Icons in Mobile Menu */}
           <button onClick={toggleTheme} className={`mt-4 py-2 px-4 rounded ${isDarkMode ? 'bg-gray-600 text-white' : 'bg-gray-300 text-black'}`}>
-            {isDarkMode ? 'Light Mode' : 'Dark Mode'}
+            {isDarkMode ? <FaSun className="text-xl" /> : <FaMoon className="text-xl" />}
           </button>
         </div>
       </div>

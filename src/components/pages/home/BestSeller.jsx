@@ -17,7 +17,7 @@ const BestSeller = () => {
 
   return (
     <div
-      className={` w-full py-6 lg:py-24 flex flex-col gap-y-8`}
+      className={` w-full px-10 py-6 lg:py-24 flex flex-col gap-y-8`}
     >
       <div className="flex items-center justify-start gap-x-3">
         <div className="border w-24 border-yellow-500" />
