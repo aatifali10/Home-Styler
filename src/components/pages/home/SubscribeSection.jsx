@@ -1,6 +1,6 @@
 const SubscribeSection = () => {
   return (
-    <section className="w-full grid grid-cols-1 gap-y-6 md:grid-cols-2 lg:h-96">
+    <section className="mt-10 w-full grid grid-cols-1 gap-y-6 md:grid-cols-2 lg:h-96">
       <div className="col-span-2 md:col-span-1 h-full">
         <img
           src="https://images.unsplash.com/photo-1693037197430-d537313da601?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"

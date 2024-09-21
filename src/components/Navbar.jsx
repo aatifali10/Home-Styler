@@ -40,7 +40,9 @@ const Navbar = () => {
       <ul className="hidden lg:flex items-center gap-x-10">
         <li><Link to="/" className={`text-base font-medium ${isDarkMode ? 'text-white' : 'text-black'} hover:text-yellow-500`}>Home</Link></li>
         <li className="relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} ref={dropdownRef}>
+          <Link to="/category">
           <button className={`text-base font-medium ${isDarkMode ? 'text-white' : 'text-black'} hover:text-yellow-500`}>Category</button>
+          </Link>
           {isDropdownOpen && (
             <ul className="absolute left-0 w-40 bg-white shadow-lg py-1 z-10">
               <li><Link to="/furniture" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Furniture</Link></li>
