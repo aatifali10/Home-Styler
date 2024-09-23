@@ -77,28 +77,28 @@ const Footer = () => {
             <Link
               target="_blank"
               to="https://www.facebook.com"
-              className="w-10 h-10 flex items-center justify-center bg-[#2d2d2d]"
+              className="w-10 h-10 flex items-center justify-center bg-[#2d2d2d] rounded-full hover:text-blue-600"
             >
               <FaFacebookSquare className="text-xl" />
             </Link>
             <Link
               target="_blank"
               to="https://www.twitter.com"
-              className="w-10 h-10 flex items-center justify-center bg-[#2d2d2d]"
+              className="w-10 h-10 flex items-center justify-center bg-[#2d2d2d] rounded-full hover:text-blue-600"
             >
               <FaTwitter className="text-xl" />
             </Link>
             <Link
               target="_blank"
               to="https://www.youtube.com"
-              className="w-10 h-10 flex items-center justify-center bg-[#2d2d2d]"
+              className="w-10 h-10 flex items-center justify-center bg-[#2d2d2d] rounded-full hover:text-red-700"
             >
               <FaYoutube className="text-xl" />
             </Link>
             <Link
               target="_blank"
               to="https://www.instagram.com"
-              className="w-10 h-10 flex items-center justify-center bg-[#2d2d2d]"
+              className="w-10 h-10 flex items-center justify-center bg-[#2d2d2d] rounded-full hover:text-red-600"
             >
               <FaInstagram className="text-xl" />
             </Link>

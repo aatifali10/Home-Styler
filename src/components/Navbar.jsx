@@ -5,6 +5,7 @@ import { IoMenu, IoClose } from "react-icons/io5";
 import { FaSun, FaMoon } from "react-icons/fa"; // Importing icons for light and dark mode
 import { Link } from "react-router-dom";
 import { useTheme } from './ThemeContext';
+import { FaShoppingCart } from "react-icons/fa";
 
 const Navbar = () => {
   const { isDarkMode, toggleTheme } = useTheme();
@@ -57,9 +58,16 @@ const Navbar = () => {
         <li><Link to="/contact-us" className={`text-base font-medium ${isDarkMode ? 'text-white' : 'text-black'} hover:text-yellow-500`}>Contact Us</Link></li>
         <li><Link to="/feedback" className={`text-base font-medium ${isDarkMode ? 'text-white' : 'text-black'} hover:text-yellow-500`}>Feedback</Link></li>
         <li><Link to="/cart"><BsFillBasketFill className={`text-xl ${isDarkMode ? 'text-yellow-500' : 'text-yellow-600'}`} /></Link></li>
+       
         <li>
           <Link to="/wishlist" className="flex items-center">
             <BsHeart className={`text-xl ${isDarkMode ? 'text-yellow-500' : 'text-yellow-600'}`} />
+            {wishlistCount > 0 && <span className="ml-1 text-sm">{wishlistCount}</span>}
+          </Link>
+        </li>
+        <li>
+          <Link to="/wishlist" className="flex items-center">
+            <FaShoppingCart className={`text-xl ${isDarkMode ? 'text-yellow-500' : 'text-yellow-600'}`} />
             {wishlistCount > 0 && <span className="ml-1 text-sm">{wishlistCount}</span>}
           </Link>
         </li>

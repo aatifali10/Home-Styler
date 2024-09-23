@@ -1,6 +1,8 @@
 import { useState, useRef } from "react";
 import emailjs from "emailjs-com";
 import { MapImage } from "../../../assets/export"; // Adjust the path to your assets folder
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ContactForm = () => {
   const form = useRef();
@@ -9,10 +11,8 @@ const ContactForm = () => {
     email: "",
     message: "",
   });
-  const [errorMessage, setErrorMessage] = useState("");
-  const [successMessage, setSuccessMessage] = useState("");
 
-  // Handle input change
+  // Handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -23,17 +23,16 @@ const ContactForm = () => {
     const { name, email, message } = formData;
 
     if (!name || !email || !message) {
-      setErrorMessage("All fields are required.");
+      toast.error("All fields are required.");
       return false;
     }
 
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(email)) {
-      setErrorMessage("Please enter a valid email address.");
+      toast.error("Please enter a valid email address.");
       return false;
     }
 
-    setErrorMessage("");
     return true;
   };
 
@@ -41,30 +40,31 @@ const ContactForm = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    if (!validateForm()) return; 
+    if (!validateForm()) return;
 
     emailjs
       .sendForm(
-        "service_7d95xx4", 
-        "template_cxd3zz1", 
+        "service_7d95xx4",
+        "template_cxd3zz1",
         form.current,
-        "dVt_1mkwHfMWPW9nj" 
+        "dVt_1mkwHfMWPW9nj"
       )
       .then(
         (result) => {
           console.log(result.text);
-          setSuccessMessage("Message sent successfully!");
-          setFormData({ name: "", email: "", message: "" }); 
+          toast.success("Message sent successfully!");
+          setFormData({ name: "", email: "", message: "" });
         },
         (error) => {
           console.log(error.text);
-          setErrorMessage("Failed to send message. Please try again later.");
+          toast.error("Failed to send message. Please try again later.");
         }
       );
   };
 
   return (
-    <div className="py-6 lg:py-20 bg-gray-100">
+    <div className="py-6 lg:py-20">
+      <ToastContainer />
       <div className="w-full grid grid-cols-1 lg:grid-cols-5">
         {/* Left section with map image */}
         <div className="col-span-3 flex items-center justify-center">
@@ -81,11 +81,7 @@ const ContactForm = () => {
               onSubmit={sendEmail}
               className="w-full flex flex-col items-start justify-center gap-y-4"
             >
-              <h1 className="font-bold text-3xl">Send Us A Message</h1>
-
-              {/* Display error or success messages */}
-              {errorMessage && <p className="text-red-600">{errorMessage}</p>}
-              {successMessage && <p className="text-green-600">{successMessage}</p>}
+              <h1 className="font-bold text-3xl text-black">Send Us A Message</h1>
 
               {/* Name field */}
               <div className="w-full">

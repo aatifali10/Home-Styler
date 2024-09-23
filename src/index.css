@@ -18,6 +18,9 @@ body.dark {
 
 .bodyBg {
   background: rgb(251, 251, 251);
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 20px;
 }
 
 .home-hero {

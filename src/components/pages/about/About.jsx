@@ -2,6 +2,8 @@
 
 const About = () => {
   return (
+    <>
+    <h1 className="text-center text-[50px] font-bold">About us </h1>
     <div className={`pt-24 py-6 lg:py-16 bodyBg flex flex-col gap-y-6 lg:gap-y-12`}>
       <p className="text-base leading-7 font-medium text-gray-500">
         Faucibus etiam lacus sollicitudin sed amet, sit vitae lorem ornare
@@ -27,6 +29,7 @@ const About = () => {
         </p>
       </div>
     </div>
+    </>
   );
 };
 

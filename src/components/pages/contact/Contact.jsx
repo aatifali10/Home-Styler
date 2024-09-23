@@ -13,11 +13,11 @@ import { FaLocationArrow } from "react-icons/fa6";
 const Contact = () => {
   return (
     <section className={` py-6 lg:py-20 bodyBg`}>
-      <div className="w-full grid grid-cols-1 lg:grid-cols-2">
+      <div className="w-full px-4 mx-auto grid grid-cols-1 lg:grid-cols-2">
         <div className="col-span-2 lg:col-span-1 flex gap-x-2 lg:gap-x-4">
           <div>
-            <div className="w-12 h-12 rounded-full bg-slate-200 flex items-center justify-center">
-              <FaLocationDot className="text-yellow-500 text-2xl" />
+            <div className="w-12 h-12 rounded-full  flex items-center justify-center">
+              <FaLocationDot className="text-yellow-500 text-5xl" />
             </div>
           </div>
           <div className="flex flex-col gap-y-4">
@@ -35,15 +35,15 @@ const Contact = () => {
             </p>
             <div className="flex flex-col md:flex-row gap-6 lg:gap-14 items-start lg:items-center">
               <div className="flex items-center gap-x-6">
-                <FaFacebook className="hover:text-yellow-500 transition-all duration-200 cursor-pointer" />
-                <FaTwitter className="hover:text-yellow-500 transition-all duration-200 cursor-pointer" />
-                <FaYoutube className="hover:text-yellow-500 transition-all duration-200 cursor-pointer" />
-                <FaInstagram className="hover:text-yellow-500 transition-all duration-200 cursor-pointer" />
+                <FaFacebook className="text-black hover:text-yellow-500 transition-all duration-200 cursor-pointer" />
+                <FaTwitter className="text-black hover:text-yellow-500 transition-all duration-200 cursor-pointer" />
+                <FaYoutube className="text-black hover:text-yellow-500 transition-all duration-200 cursor-pointer" />
+                <FaInstagram className="text-black hover:text-yellow-500 transition-all duration-200 cursor-pointer" />
               </div>
               <div>
                 <Link
                   to="/"
-                  className="uppercase text-xs font-medium hover:text-yellow-500 flex items-center gap-x-4"
+                  className="text-black uppercase text-xs font-medium hover:text-yellow-500 flex items-center gap-x-4"
                 >
                   <FaLocationArrow className="hover:text-yellow-500 transition-all duration-200 cursor-pointer text-lg" />
                   Get Directions
