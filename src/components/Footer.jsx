@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="col-span-3 flex flex-col gap-y-8">
           <div className="flex items-center gap-x-1">
             <CgIfDesign className="text-4xl text-yellow-500" />
-            <h1 className="uppercase font-semibold text-3xl">Home Styler</h1>
+            <h1 className="uppercase font-semibold text-3xl">Home Decor</h1>
           </div>
           <div className="flex flex-col gap-y-2">
             <Link to="/" className="text-base">
