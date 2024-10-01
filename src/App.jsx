@@ -13,6 +13,9 @@ import KitchenHero from "./components/pages/Products/KitchenHero"
 import AboutUs from "./components/pages/about/AboutUs"
 import ContactUs from "./components/pages/contact/ContactUs"
 import FeedbackForm from "./components/pages/feedback/Feedback"
+import Cart from "./components/pages/Products/Cart"
+// import Cart from "./components/pages/Products/Cart"
+// import CategoryCart from "./components/pages/Products/CategoryCart"
 
 
 const App = () => {
@@ -33,6 +36,7 @@ const App = () => {
       <Route path="/about-us" element={<AboutUs/>} />
       <Route path="/contact-us" element={<ContactUs/>} />
       <Route path="/feedback" element={<FeedbackForm/>} />
+      <Route path="/cart" element={<Cart/>} />
     </Routes>
     <Footer/>
     </ThemeProvider>

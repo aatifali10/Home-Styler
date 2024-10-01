@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../../redux/cartSlice"; // Import the addToCart action
 
 const ProductCard = ({ image, name, price, id, description, category }) => {
   const [isWishlisted, setIsWishlisted] = useState(
@@ -30,14 +31,20 @@ const ProductCard = ({ image, name, price, id, description, category }) => {
       wishlist.push(id);
       localStorage.setItem("wishlist", JSON.stringify(wishlist));
     } else {
-      const updatedWishlist = wishlist.filter(itemId => itemId !== id);
+      const updatedWishlist = wishlist.filter((itemId) => itemId !== id);
       localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
     }
     setIsWishlisted(!isWishlisted);
   };
 
+  const dispatch = useDispatch();
+
+  const handleAddToCart = () => {
+    const product = { id, name, price, image, description, category };
+    dispatch(addToCart(product)); // Dispatch the action with the product details
+  };
+
   return (
-    
     <div className="w-full px-4 max-w-sm mx-auto group overflow-hidden rounded-lg shadow-lg bg-white transition-transform duration-300 hover:scale-105">
       <div className="relative">
         <img
@@ -66,11 +73,12 @@ const ProductCard = ({ image, name, price, id, description, category }) => {
           <p className="text-base text-black font-medium">${price}</p>
           <p className="text-sm text-black font-medium">Rating: 5.4</p>
         </div>
-        <Link to={`/products/${id}`} className="mt-4 w-full">
-          <button className="bg-yellow-500 w-full py-2 rounded-md uppercase text-xs font-medium text-white hover:bg-yellow-600 transition duration-300">
-            Add to Cart
-          </button>
-        </Link>
+        <button
+          className="bg-yellow-500 w-full py-2 rounded-md uppercase text-xs font-medium text-white hover:bg-yellow-600 transition duration-300 mt-4"
+          onClick={handleAddToCart}
+        >
+          Add to Cart
+        </button>
       </div>
     </div>
   );

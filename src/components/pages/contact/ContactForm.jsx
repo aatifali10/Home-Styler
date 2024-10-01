@@ -1,8 +1,8 @@
 import { useState, useRef } from "react";
 import emailjs from "emailjs-com";
 import { MapImage } from "../../../assets/export"; // Adjust the path to your assets folder
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ContactForm = () => {
   const form = useRef();
@@ -42,24 +42,17 @@ const ContactForm = () => {
 
     if (!validateForm()) return;
 
-    emailjs
-      .sendForm(
-        "service_7d95xx4",
-        "template_cxd3zz1",
-        form.current,
-        "dVt_1mkwHfMWPW9nj"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          toast.success("Message sent successfully!");
-          setFormData({ name: "", email: "", message: "" });
-        },
-        (error) => {
-          console.log(error.text);
-          toast.error("Failed to send message. Please try again later.");
-        }
-      );
+    emailjs.sendForm("service id", "template_id", form.current, "user id").then(
+      (result) => {
+        console.log(result.text);
+        toast.success("Message sent successfully!");
+        setFormData({ name: "", email: "", message: "" });
+      },
+      (error) => {
+        console.log(error.text);
+        toast.error("Failed to send message. Please try again later.");
+      }
+    );
   };
 
   return (
@@ -81,7 +74,9 @@ const ContactForm = () => {
               onSubmit={sendEmail}
               className="w-full flex flex-col items-start justify-center gap-y-4"
             >
-              <h1 className="font-bold text-3xl text-black">Send Us A Message</h1>
+              <h1 className="font-bold text-3xl text-black">
+                Send Us A Message
+              </h1>
 
               {/* Name field */}
               <div className="w-full">

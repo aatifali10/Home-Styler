@@ -1,5 +1,4 @@
 import {
-  BathoomMirror,
   BathroomWoodenTable,
   BlackMetalLamp,
   CreamCeramicOvalBathtub,
@@ -32,19 +31,10 @@ import {
   toilet1,
   toilet2,
   toilet3,
-  toilet4,
-
-
-
   curtain1,
   curtain2,
   curtain3,
   curtain4,
-  cushions1,
-  cushions2,
-  cushions3,
-  cushions4,
-  rugs,
   vases,
   vases1,
   vases2,
@@ -55,9 +45,6 @@ import {
   wallart2,
   wallart3,
   wallart4,
-
-
-
   bed,
   bed1,
   bed2,
@@ -83,8 +70,6 @@ import {
   table2,
   table3,
   table4,
-
-
   backsplash,
   backsplash1,
   backsplash2,
@@ -109,9 +94,6 @@ import {
   island2,
   island3,
   island4,
-
-
-
   floorlamps,
   floorlamps1,
   floorlamps2,
